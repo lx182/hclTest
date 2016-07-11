@@ -1,0 +1,17 @@
+<h3>Favorites</h3>
+<div class="list-group">
+    <div class="list-group-item" ng-repeat="li in list">
+        <h4 class="list-group-item-heading">
+            <a href="#/foodDetails/{{li.ndbno}}">{{li.name}}</a>
+            <a
+                href="" 
+                class="glyphicon glyphicon-star pull-right"
+                ng-click="remove(li)"
+                ng-addfav="{{li}}">
+                
+            </a>
+        </h4>
+        <p class="list-group-item-text">{{li.group}}</p>
+    </div>
+</div>
+<p ng-if="list.length == 0">NO FAVORITE FOOD WAS FOUND!!! Please go to <a ng-href="#/search">search</a> some favorite food.</p>

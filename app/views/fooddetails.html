@@ -1,0 +1,22 @@
+<h2>{{name}}</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nutrient</th>
+            <th>Unit</th>
+            <th>Value per 100 g</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="(key, value) in details | groupBy: 'group'">
+        <tr class="header">
+            <td>{{key}}</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="dat in value">
+            <td>{{dat.name}}</td>
+            <td>{{dat.unit}}</td>
+            <td>{{dat.value}}</td>
+        </tr>
+    </tbody>
+</table>

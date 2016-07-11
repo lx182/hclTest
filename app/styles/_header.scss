@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 11, 2016, 12:16:37 PM
+    Author     : lz
+*/
+#header{
+    background-color: transparent;
+    @include border-radius(0px);
+    border: none;
+    border-bottom: 1px solid $grayBackground;
+    .navbar-nav{
+        li{
+            a{
+                border-bottom: 3px solid transparent;
+                @include transition(all 0.3s linear);
+                text-transform: uppercase;
+                margin:{
+                    left:5px;
+                    right: 5px;
+                }
+                &:hover{
+                    border-bottom-color: $greenLogo;
+                }
+            }
+        }
+    }
+}
+h3{
+    padding-bottom: 15px;
+    border-bottom: 2px solid $grayBackground;
+}
+a[class*='glyphicon-star']{
+    color: $fav;
+    font-size: 30px;
+    @include transition(all 0.3s ease-in-out);
+    &:hover{
+        color: $fav;
+        text-decoration: none;
+        transform: rotate(144deg);
+        font-size: 40px;
+    }
+    &:focus, &:active, &:visited{
+        color: $fav;
+        text-decoration: none;
+    }
+}

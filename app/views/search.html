@@ -1,0 +1,26 @@
+<div class="col-xs-12">
+    <form class="input-group col-xs-5" ng-submit="submit()" role="search">
+        <input type="text" class="form-control" ng-model="term" placeholder="Search">
+        <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">Search</button>
+        </span>
+    </form>
+</div>
+<div class="searchResult col-xs-12">
+    <h3>Results</h3>
+    <div class="list-group">
+        <div class="list-group-item" ng-repeat="li in list">
+            <h4 class="list-group-item-heading">
+                <a href="#/foodDetails/{{li.ndbno}}">{{li.name}}</a>
+                <a ng-click="addFav(li.ndbno)" 
+                   href="" 
+                   class="glyphicon glyphicon-star{{isFav(li.ndbno)}} pull-right"
+                   ng-addfav="{{li}}">
+                </a>
+            </h4>
+            <p class="list-group-item-text">{{li.group}}</p>
+        </div>
+    </div>
+    <p ng-if="searched && list.length === 0">No results was found!!!</p>
+    <p ng-show="!searched">Please typing a term to search.</p>
+</div>
